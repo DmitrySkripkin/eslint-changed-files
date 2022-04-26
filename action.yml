@@ -58,6 +58,8 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - run: |
+      git config merge.renameLimit 999999 && git config diff.renameLimit 999999
     - uses: reviewdog/action-setup@v1
       with:
         reviewdog_version: v0.13.1
